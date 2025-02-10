@@ -1,0 +1,11 @@
+- name: 'Course 1: Web Development Bootcamp'
+  institution: 'Online Learning Platform'
+  year_completed: '2024'
+  description: 'A comprehensive course on full-stack web development with hands-on projects.'
+  link: 'https://www.example.com/courses/web-development'
+
+- name: 'Course 2: Data Science with Python'
+  institution: 'Data Science Academy'
+  year_completed: '2023'
+  description: 'Learn the foundations of data science, including Python, statistics, and machine learning.'
+  link: 'https://www.example.com/courses/data-science'

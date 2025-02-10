@@ -1,0 +1,9 @@
+- title: 'Project 1: Personal Portfolio Website'
+  description: 'A personal portfolio built using HTML, CSS, and JavaScript to showcase my work.'
+  technologies: ['HTML', 'CSS', 'JavaScript']
+  link: 'https://www.example.com/projects/portfolio'
+
+- title: 'Project 2: Data Analysis Dashboard'
+  description: 'A dashboard that visualizes datasets and insights using Python and Tableau.'
+  technologies: ['Python', 'Tableau', 'Pandas']
+  link: 'https://www.example.com/projects/dashboard'

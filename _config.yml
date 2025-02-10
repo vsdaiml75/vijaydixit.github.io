@@ -1,0 +1,60 @@
+# Site settings
+title: My Awesome Site
+email: vijay_s_dixit@hotmail.com
+description: A brief description of your site
+baseurl: '' # leave empty for root
+url: 'https://www.vijaydixit.com' # your site URL
+
+# Social media links
+github_username: vsdaiml75
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Permalink structure
+permalink: /:year/:month/:day/:title/
+
+# Theme settings (if using a theme that supports customization)
+theme: jekyll-theme-cayman
+minify_css: true
+minify_js: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files or directories from being processed
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - node_modules/
+
+# Navigation links
+navbar:
+  - title: 'Home'
+    url: '/'
+  - title: 'About'
+    url: '/about'
+  - title: 'Blog'
+    url: '/blog'
+  - title: 'Contact'
+    url: '/contact'
+
+# Analytics and Tracking (e.g., Google Analytics)
+#google_analytics: "UA-XXXXXXXX-X"
+
+# Additional settings
+timezone: 'Asia/Kolkata'
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: 'post'
+      author: 'Vijay Dixit'
+      category: 'General'
+
+# Custom settings (you can add your own keys)
+custom_key: 'custom_value'

@@ -1,0 +1,9 @@
+- name: 'Certified Web Developer'
+  issuer: 'Web Development Association'
+  year_issued: '2024'
+  link: 'https://www.example.com/certifications/web-developer'
+
+- name: 'Google Analytics Certified'
+  issuer: 'Google'
+  year_issued: '2023'
+  link: 'https://www.example.com/certifications/google-analytics'
