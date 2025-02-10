@@ -12,20 +12,29 @@
   <body>
     <header>
       <nav>
-        <ul>
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-          <!-- Add more links as needed -->
-        </ul>
+        <div class="container">
+          <div class="logo">
+            <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+          </div>
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+            <!-- Add more links as needed -->
+          </ul>
+        </div>
       </nav>
     </header>
-    <main>{{ content }}</main>
+    <main>
+      <div class="container">{{ content }}</div>
+    </main>
     <footer>
-      <p>
-        &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights
-        reserved.
-      </p>
+      <div class="container">
+        <p>
+          &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights
+          reserved.
+        </p>
+      </div>
     </footer>
   </body>
 </html>

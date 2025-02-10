@@ -1,8 +1,16 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 header {
@@ -11,24 +19,37 @@ header {
   padding: 1rem 0;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
-  text-align: center;
+  margin: 0;
+  display: flex;
 }
 
 nav ul li {
-  display: inline;
   margin: 0 1rem;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 main {
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 footer {
@@ -36,7 +57,13 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem 0;
-  position: fixed;
-  width: 100%;
+  position: relative;
   bottom: 0;
+  width: 100%;
+}
+
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
