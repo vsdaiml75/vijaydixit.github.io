@@ -48,7 +48,32 @@ nav ul li a {
   font-size: 1rem;
 }
 
-main {
+.hero {
+  background: url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.section {
   padding: 2rem 0;
 }
 
