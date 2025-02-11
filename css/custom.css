@@ -523,7 +523,7 @@ section {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* Common header styles with consistent spacing */
+/* Update section header styles */
 .section-header {
     position: relative;
     max-width: 1200px;
@@ -535,6 +535,38 @@ section {
     border-left: 4px solid rgba(7, 109, 243, 0.3);
     padding-left: 1.5rem;
     border-radius: 12px 12px 0 0;
+}
+
+.section-title {
+    color: var(--text-primary);
+    font-size: 1.2rem;  /* Reduced from 1.5rem */
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-icon {
+    font-size: 1rem;  /* Reduced from default */
+    color: var(--primary-blue);
+    opacity: 0.8;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.85rem;  /* Reduced size */
+    margin: 0.2rem 0 0;  /* Reduced margin */
+}
+
+.section-header-wrapper {
+    margin-bottom: 0.5rem;  /* Reduced from default */
+}
+
+/* Adjust anchor position for new header size */
+.section-anchor {
+    padding: 0.35rem;  /* Reduced padding */
+    font-size: 0.9rem;  /* Smaller icon */
 }
 
 /* First header special case - now matches others */
@@ -824,4 +856,123 @@ section {
 
 .section-anchor:hover {
     color: var(--primary-blue);
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 12px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #2b7de9;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+    padding-left: 70px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 44px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2b7de9;
+    border: 2px solid #fff;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 8px 20px;  /* Reduced from 12px to 8px */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.timeline-date {
+    color: #2b7de9;
+    font-weight: 600;
+    margin-bottom: 1px;  /* Reduced from 2px */
+    font-size: 0.9rem;  /* Reduced size */
+}
+
+.timeline-title {
+    font-size: 1rem;    /* Reduced from 1.2rem */
+    margin-bottom: 1px;  /* Reduced from 2px */
+}
+
+.timeline-company {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0;   /* Removed bottom margin */
+    font-size: 0.9rem;  /* Added smaller font size */
+}
+
+.timeline-achievements {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+
+.timeline-achievements li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.timeline-achievements li::before {
+    content: '•';
+    color: #2b7de9;
+    position: absolute;
+    left: 0;
+}
+
+.timeline-tech {
+    margin-top: 15px;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 2px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 0.25rem;  /* Reduced from 0.4rem */
+}
+
+.timeline-header-content {
+    flex: 1;
+}
+
+.timeline-content .toggle-btn {
+    padding: 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.timeline-content .toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.timeline-body {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
 } 

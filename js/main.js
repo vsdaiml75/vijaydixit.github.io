@@ -174,3 +174,17 @@ document.querySelectorAll('.section-anchor').forEach(anchor => {
         });
     });
 });
+
+function toggleExperience(button) {
+    const content = button.closest('.timeline-content').querySelector('.timeline-body');
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    
+    button.setAttribute('aria-expanded', !isExpanded);
+    button.querySelector('i').style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+    
+    if (isExpanded) {
+        content.style.display = 'none';
+    } else {
+        content.style.display = 'block';
+    }
+}

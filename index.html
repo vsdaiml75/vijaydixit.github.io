@@ -30,6 +30,9 @@
                             <a class="nav-link" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#experience">Professional Experience</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
@@ -652,6 +655,83 @@
                         <span class="skill-badge">DevOps Practices</span>
                         <span class="skill-badge">Infrastructure as Code</span>
                         <span class="skill-badge">CI/CD</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <div class="section-header-wrapper">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-briefcase section-icon"></i>
+                        Professional Experience
+                    </h2>
+                    <a href="#experience" class="section-anchor" aria-label="Copy link to Experience section">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+                <p class="section-subtitle">Career journey and key achievements</p>
+            </div>
+
+            <section id="experience-container">
+                <!-- Experience Timeline -->
+                <div class="timeline">
+                    <!-- Current/Recent Role -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-header-content">
+                                    <div class="timeline-date">2020 - Present</div>
+                                    <h3 class="timeline-title">Senior Cloud Architect</h3>
+                                    <p class="timeline-company">Tech Solutions Inc.</p>
+                                </div>
+                                <button class="toggle-btn" 
+                                        onclick="toggleExperience(this)" 
+                                        aria-expanded="false">
+                                    <i class="fas fa-chevron-down"></i>
+                                    <span class="visually-hidden">Toggle experience details</span>
+                                </button>
+                            </div>
+                            <div class="timeline-body" style="display: none;">
+                                <p>Leading cloud transformation initiatives and implementing enterprise-scale solutions.</p>
+                                <ul class="timeline-achievements">
+                                    <li>Architected and implemented cloud-native solutions</li>
+                                    <li>Led team of 15 engineers across multiple projects</li>
+                                    <li>Reduced infrastructure costs by 40%</li>
+                                </ul>
+                                <div class="timeline-tech">
+                                    <span class="tech-badge">AWS</span>
+                                    <span class="tech-badge">Azure</span>
+                                    <span class="tech-badge">Terraform</span>
+                                    <span class="tech-badge">Kubernetes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Previous Role Template -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-header-content">
+                                    <div class="timeline-date">2018 - 2020</div>
+                                    <h3 class="timeline-title">Cloud Solutions Architect</h3>
+                                    <p class="timeline-company">Innovation Systems Ltd.</p>
+                                </div>
+                                <button class="toggle-btn" 
+                                        onclick="toggleExperience(this)" 
+                                        aria-expanded="false">
+                                    <i class="fas fa-chevron-down"></i>
+                                    <span class="visually-hidden">Toggle experience details</span>
+                                </button>
+                            </div>
+                            <div class="timeline-body" style="display: none;">
+                                <!-- Add role details -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
