@@ -47,52 +47,80 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Project filtering
-const categoryButtons = document.querySelectorAll('.category-btn');
-const projectCards = document.querySelectorAll('.project-card');
-const projectCategories = document.querySelectorAll('.project-category');
-
-categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        categoryButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        const selectedCategory = button.getAttribute('data-category');
-        
-        if (selectedCategory === 'all') {
-            projectCategories.forEach(category => category.style.display = 'block');
-        } else {
-            projectCategories.forEach(category => {
-                const hasMatchingProjects = category.querySelector(`.project-card[data-category="${selectedCategory}"]`);
-                category.style.display = hasMatchingProjects ? 'block' : 'none';
-            });
-        }
-    });
-});
-
-// Update the toggleProject function
-function toggleProject(header) {
-    const content = header.nextElementSibling;
-    const icon = header.querySelector('.toggle-icon');
+// Project details toggle
+function toggleProject(button) {
+    const projectBox = button.closest('.project-box');
+    const content = projectBox.querySelector('.project-content');
+    const icon = button.querySelector('i');
     
-    // Close all other open projects
-    document.querySelectorAll('.project-content').forEach(item => {
-        if (item !== content) {
-            item.style.display = 'none';
-            item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+    // Close all other projects
+    document.querySelectorAll('.project-content').forEach(otherContent => {
+        if (otherContent !== content && otherContent.style.display === 'block') {
+            otherContent.style.display = 'none';
+            otherContent.previousElementSibling
+                .querySelector('i')
+                .className = 'fas fa-chevron-down';
         }
     });
     
     // Toggle current project
-    if (content.style.display === 'block') {
-        content.style.display = 'none';
-        icon.textContent = '+';
-    } else {
+    if (content.style.display === 'none') {
         content.style.display = 'block';
-        icon.textContent = '×';
+        icon.className = 'fas fa-chevron-up';
+    } else {
+        content.style.display = 'none';
+        icon.className = 'fas fa-chevron-down';
     }
 }
 
-// We'll add minimal JS for filtering projects
+// Add this function for certification toggles
+function toggleCertification(button) {
+    const certBox = button.closest('.cert-box');
+    const content = certBox.querySelector('.cert-content');
+    const icon = button.querySelector('i');
+    
+    // Close all other certifications
+    document.querySelectorAll('.cert-content').forEach(otherContent => {
+        if (otherContent !== content && otherContent.style.display === 'block') {
+            otherContent.style.display = 'none';
+            otherContent.previousElementSibling
+                .querySelector('i')
+                .className = 'fas fa-chevron-down';
+        }
+    });
+    
+    // Toggle current certification
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.className = 'fas fa-chevron-up';
+    } else {
+        content.style.display = 'none';
+        icon.className = 'fas fa-chevron-down';
+    }
+}
+
+// Add this function for training toggles
+function toggleTraining(button) {
+    const trainingBox = button.closest('.cert-box');
+    const content = trainingBox.querySelector('.cert-content');
+    const icon = button.querySelector('i');
+    
+    // Close all other trainings
+    document.querySelectorAll('.cert-content').forEach(otherContent => {
+        if (otherContent !== content && otherContent.style.display === 'block') {
+            otherContent.style.display = 'none';
+            otherContent.previousElementSibling
+                .querySelector('i')
+                .className = 'fas fa-chevron-down';
+        }
+    });
+    
+    // Toggle current training
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.className = 'fas fa-chevron-up';
+    } else {
+        content.style.display = 'none';
+        icon.className = 'fas fa-chevron-down';
+    }
+}

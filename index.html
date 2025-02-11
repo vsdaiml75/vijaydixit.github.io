@@ -18,7 +18,8 @@
             <div class="container">
                 <div class="navbar-brand-container">
                     <a class="navbar-brand" href="#home">Vijay Dixit</a>
-                    <p class="navbar-subtitle">Delivery Leadership | Quality Assurance | Cloud Engineer | AIML Enthusiast</p>
+                    <p class="navbar-subtitle">Delivery Leadership & Excellence</p>
+                    <p class="navbar-subtitle">Cloud Engineer | ML Enthusiast</p>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -50,137 +51,532 @@
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Vijay Dixit</span></h1>
-                <p class="tagline">Delivery Leadership | Quality Assurance | Cloud Engineer | AIML Enthusiast</p>
-            </div>
-        </section>
+        <div class="section-container">
+            <section id="projects-header" class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-code-branch section-icon"></i>
+                    Featured Projects
+                </h2>
+                <p class="section-subtitle">Recent work and technical achievements</p>
+            </section>
 
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="project-categories">
-                <button class="category-btn active" data-category="all">All</button>
-                <button class="category-btn" data-category="python">Python</button>
-                <button class="category-btn" data-category="machine-learning">Machine Learning</button>
-            </div>
-            
-            <div class="project-grid">
-                <!-- All project cards go here directly, not nested in categories -->
-                <article class="project-card" data-category="python">
-                    <div class="project-header" onclick="toggleProject(this)">
-                        <h4>Python Project 1 <span class="toggle-icon">+</span></h4>
+            <section id="projects-container">
+                <!-- AWS Project -->
+                <div class="project-box">
+                    <div class="project-header">
+                        <h5 class="project-title">AWS Infra Automation</h5>
+                        <button class="toggle-btn" onclick="toggleProject(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
                     </div>
-                    <div class="project-content">
-                        <div class="project-info">
-                            <h5>Project Overview</h5>
-                            <p class="project-description">Detailed description of what the project does and its key features.</p>
-                            
-                            <div class="project-details">
-                                <div class="detail-item">
-                                    <h6>Key Features</h6>
-                                    <ul>
-                                        <li>Feature 1</li>
-                                        <li>Feature 2</li>
-                                        <li>Feature 3</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="detail-item">
-                                    <h6>Technologies Used</h6>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Python</span>
-                                        <span class="tech-tag">Django</span>
-                                        <span class="tech-tag">PostgreSQL</span>
-                                    </div>
-                                </div>
-
-                                <div class="detail-item">
-                                    <h6>Implementation Details</h6>
-                                    <p>Brief explanation of how the project was implemented, challenges faced, and solutions.</p>
-                                </div>
-                            </div>
-
-                            <div class="project-links">
-                                <a href="https://github.com/yourusername/project-repo" class="btn github-btn" target="_blank">
-                                    <i class="fab fa-github"></i> View Source Code
-                                </a>
-                                <a href="#" class="btn demo-btn" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="btn docs-btn" target="_blank">
-                                    <i class="fas fa-book"></i> Documentation
-                                </a>
+                    <div class="project-content" style="display: none;">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Overview</h6>
+                            <p>Automated AWS infrastructure deployment using Terraform and Jenkins pipeline.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Key Features</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Infrastructure as Code using Terraform</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>CI/CD Pipeline with Jenkins</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Automated Testing and Deployment</li>
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Technologies</h6>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-light text-dark border">AWS</span>
+                                <span class="badge bg-light text-dark border">Terraform</span>
+                                <span class="badge bg-light text-dark border">Jenkins</span>
                             </div>
                         </div>
                     </div>
-                </article>
-                <article class="project-card" data-category="python">
-                    <div class="project-header" onclick="toggleProject(this)">
-                        <h4>Python Project 2 <span class="toggle-icon">+</span></h4>
-                    </div>
-                    <div class="project-content">
-                        <!-- Same structure as Project 1 -->
-                    </div>
-                </article>
-                <article class="project-card" data-category="machine-learning">
-                    <div class="project-header" onclick="toggleProject(this)">
-                        <h4>ML Project 1 <span class="toggle-icon">+</span></h4>
-                    </div>
-                    <div class="project-content">
-                        <!-- Same structure as Project 1 -->
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="certifications">
-            <h2>Certifications & Training</h2>
-            <div class="cert-grid">
-                <article class="cert-card">
-                    <h3>Certification Name</h3>
-                    <p class="cert-issuer">Issuing Organization</p>
-                    <p class="cert-date">Completion Date: Month Year</p>
-                    <a href="#" class="cert-verify">Verify Certificate</a>
-                </article>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                    </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>Python</li>
-                    </ul>
+
+                <!-- Data Pipeline Project -->
+                <div class="project-box">
+                    <div class="project-header">
+                        <h5 class="project-title">Data Pipeline Orchestration</h5>
+                        <button class="toggle-btn" onclick="toggleProject(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="project-content" style="display: none;">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Overview</h6>
+                            <p>End-to-end data pipeline using Apache Airflow for ETL processes and data warehousing.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Key Features</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Automated ETL Workflows</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Real-time Data Processing</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Data Quality Monitoring</li>
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Technologies</h6>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-light text-dark border">Apache Airflow</span>
+                                <span class="badge bg-light text-dark border">Python</span>
+                                <span class="badge bg-light text-dark border">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <!-- ML Project -->
+                <div class="project-box">
+                    <div class="project-header">
+                        <h5 class="project-title">Predictive Analytics Model</h5>
+                        <button class="toggle-btn" onclick="toggleProject(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="project-content" style="display: none;">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Overview</h6>
+                            <p>Machine learning model for predictive maintenance using sensor data and time series analysis.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Key Features</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Time Series Forecasting</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Anomaly Detection</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Real-time Predictions</li>
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Technologies</h6>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-light text-dark border">TensorFlow</span>
+                                <span class="badge bg-light text-dark border">Scikit-learn</span>
+                                <span class="badge bg-light text-dark border">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Security Framework -->
+                <div class="project-box">
+                    <div class="project-header">
+                        <h5 class="project-title">Cloud Security Framework</h5>
+                        <button class="toggle-btn" onclick="toggleProject(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="project-content" style="display: none;">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Overview</h6>
+                            <p>Implemented comprehensive cloud security framework with multi-layer protection and compliance monitoring.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Key Features</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Zero Trust Architecture</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Automated Compliance Checks</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Real-time Threat Detection</li>
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Technologies</h6>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-light text-dark border">AWS Security Hub</span>
+                                <span class="badge bg-light text-dark border">CloudWatch</span>
+                                <span class="badge bg-light text-dark border">IAM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section id="certifications-header" class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-certificate section-icon"></i>
+                    Certifications
+                </h2>
+                <p class="section-subtitle">Professional qualifications and expertise validation</p>
+            </section>
+
+            <section id="certifications-container">
+                <!-- AWS Certification -->
+                <div class="cert-box">
+                    <div class="cert-header">
+                        <h5 class="cert-title">AWS Solutions Architect Associate</h5>
+                        <button class="toggle-btn" onclick="toggleCertification(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="cert-content" style="display: none;">
+                        <div class="mb-3">
+                            <p class="cert-issuer">Amazon Web Services (AWS)</p>
+                            <p class="cert-date">Issued: Jan 2024 · Expires: Jan 2027</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Skills Verified</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Cloud Architecture Design</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>AWS Services & Solutions</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Security & Compliance</li>
+                            </ul>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="badge cert-badge" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>Verify Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Azure Certification -->
+                <div class="cert-box">
+                    <div class="cert-header">
+                        <h5 class="cert-title">Azure Solutions Architect Expert</h5>
+                        <button class="toggle-btn" onclick="toggleCertification(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="cert-content" style="display: none;">
+                        <div class="mb-3">
+                            <p class="cert-issuer">Microsoft Azure</p>
+                            <p class="cert-date">Issued: Dec 2023 · Expires: Dec 2025</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Skills Verified</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Azure Infrastructure Solutions</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Cloud Security & Governance</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>High Availability Design</li>
+                            </ul>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="badge cert-badge" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>Verify Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GCP Certification -->
+                <div class="cert-box">
+                    <div class="cert-header">
+                        <h5 class="cert-title">Google Cloud Professional Architect</h5>
+                        <button class="toggle-btn" onclick="toggleCertification(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="cert-content" style="display: none;">
+                        <div class="mb-3">
+                            <p class="cert-issuer">Google Cloud Platform</p>
+                            <p class="cert-date">Issued: Nov 2023 · Expires: Nov 2025</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Skills Verified</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>GCP Architecture Design</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Cloud Native Solutions</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Cost Optimization</li>
+                            </ul>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="badge cert-badge" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>Verify Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HashiCorp Terraform Associate -->
+                <div class="cert-box">
+                    <div class="cert-header">
+                        <h5 class="cert-title">HashiCorp Terraform Associate</h5>
+                        <button class="toggle-btn" onclick="toggleCertification(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="cert-content" style="display: none;">
+                        <div class="mb-3">
+                            <p class="cert-issuer">HashiCorp</p>
+                            <p class="cert-date">Issued: Oct 2023 · Expires: Oct 2025</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Skills Verified</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Infrastructure as Code</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>State Management</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Module Development</li>
+                            </ul>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="badge cert-badge" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>Verify Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section id="trainings-header" class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap section-icon"></i>
+                    Trainings
+                </h2>
+                <p class="section-subtitle">Continuous learning and skill development</p>
+            </section>
+
+            <section id="trainings-container">
+                <!-- Cloud Architecture Training -->
+                <div class="cert-box">
+                    <div class="cert-header">
+                        <h5 class="cert-title">Advanced Cloud Architecture</h5>
+                        <button class="toggle-btn" onclick="toggleTraining(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="cert-content" style="display: none;">
+                        <div class="mb-3">
+                            <p class="cert-issuer">Coursera - Google Cloud</p>
+                            <p class="cert-date">Completed: March 2024</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Key Learnings</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Distributed Systems Design</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Microservices Architecture</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Cloud-Native Patterns</li>
+                            </ul>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="badge cert-badge" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps Training -->
+                <div class="cert-box">
+                    <div class="cert-header">
+                        <h5 class="cert-title">DevOps Professional</h5>
+                        <button class="toggle-btn" onclick="toggleTraining(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="cert-content" style="display: none;">
+                        <div class="mb-3">
+                            <p class="cert-issuer">Udemy - DevOps Mastery</p>
+                            <p class="cert-date">Completed: February 2024</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Key Learnings</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>CI/CD Pipeline Design</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Infrastructure as Code</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Container Orchestration</li>
+                            </ul>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="badge cert-badge" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning Training -->
+                <div class="cert-box">
+                    <div class="cert-header">
+                        <h5 class="cert-title">Machine Learning Fundamentals</h5>
+                        <button class="toggle-btn" onclick="toggleTraining(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="cert-content" style="display: none;">
+                        <div class="mb-3">
+                            <p class="cert-issuer">Stanford Online - deeplearning.ai</p>
+                            <p class="cert-date">Completed: January 2024</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Key Learnings</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Neural Networks</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Deep Learning Models</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Model Optimization</li>
+                            </ul>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="badge cert-badge" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Design & Architecture -->
+                <div class="cert-box">
+                    <div class="cert-header">
+                        <h5 class="cert-title">System Design & Architecture</h5>
+                        <button class="toggle-btn" onclick="toggleTraining(this)">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="cert-content" style="display: none;">
+                        <div class="mb-3">
+                            <p class="cert-issuer">educative.io - ByteByteGo</p>
+                            <p class="cert-date">Completed: December 2023</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Key Learnings</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Scalable Systems Design</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Database Sharding</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Load Balancing Strategies</li>
+                            </ul>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="badge cert-badge" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section id="skills-header" class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-layer-group section-icon"></i>
+                    Professional Skills
+                </h2>
+                <p class="section-subtitle">Multi-disciplinary expertise across management and technology</p>
+            </section>
+
+            <section id="skills-container">
+                <!-- Leadership & Management -->
+                <div class="skill-box">
+                    <div class="skill-header">
+                        <h5 class="skill-title">Leadership & Management</h5>
+                        <i class="fas fa-users skill-icon"></i>
+                    </div>
+                    <div class="skill-content">
+                        <span class="skill-badge">Program Management</span>
+                        <span class="skill-badge">Team Leadership</span>
+                        <span class="skill-badge">Stakeholder Management</span>
+                        <span class="skill-badge">Resource Planning</span>
+                    </div>
+                </div>
+
+                <!-- Business & Strategy -->
+                <div class="skill-box">
+                    <div class="skill-header">
+                        <h5 class="skill-title">Business & Strategy</h5>
+                        <i class="fas fa-chart-line skill-icon"></i>
+                    </div>
+                    <div class="skill-content">
+                        <span class="skill-badge">Pre-sales</span>
+                        <span class="skill-badge">Business Analysis</span>
+                        <span class="skill-badge">Account Management</span>
+                        <span class="skill-badge">Solution Design</span>
+                    </div>
+                </div>
+
+                <!-- Delivery Excellence -->
+                <div class="skill-box">
+                    <div class="skill-header">
+                        <h5 class="skill-title">Delivery Excellence</h5>
+                        <i class="fas fa-rocket skill-icon"></i>
+                    </div>
+                    <div class="skill-content">
+                        <span class="skill-badge">Agile Methodologies</span>
+                        <span class="skill-badge">Quality Assurance</span>
+                        <span class="skill-badge">Process Optimization</span>
+                        <span class="skill-badge">Change Management</span>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="skill-box">
+                    <div class="skill-header">
+                        <h5 class="skill-title">Technical Skills</h5>
+                        <i class="fas fa-code-branch skill-icon"></i>
+                    </div>
+                    <div class="skill-content">
+                        <span class="skill-badge">Cloud Platforms</span>
+                        <span class="skill-badge">DevOps Practices</span>
+                        <span class="skill-badge">Infrastructure as Code</span>
+                        <span class="skill-badge">CI/CD</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section id="contact-header" class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-envelope section-icon"></i>
+                    Let's Connect
+                </h2>
+                <p class="section-subtitle">Open for opportunities and collaborations</p>
+            </section>
+
+            <section id="contact-container">
+                <!-- Professional Profile -->
+                <div class="contact-box">
+                    <div class="contact-header">
+                        <h5 class="contact-title">Professional Profile</h5>
+                        <i class="fas fa-user-tie contact-icon"></i>
+                    </div>
+                    <div class="contact-content">
+                        <p class="contact-text">Senior Technology Leader with expertise in Cloud, DevOps, and Digital Transformation</p>
+                        <a href="https://linkedin.com/in/yourusername" class="contact-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Direct Contact -->
+                <div class="contact-box">
+                    <div class="contact-header">
+                        <h5 class="contact-title">Direct Contact</h5>
+                        <i class="fas fa-paper-plane contact-icon"></i>
+                    </div>
+                    <div class="contact-content">
+                        <p class="contact-text">Feel free to reach out for collaborations or opportunities</p>
+                        <a href="mailto:your.email@example.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            Email Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Technical Collaboration -->
+                <div class="contact-box">
+                    <div class="contact-header">
+                        <h5 class="contact-title">Technical Collaboration</h5>
+                        <i class="fas fa-code-branch contact-icon"></i>
+                    </div>
+                    <div class="contact-content">
+                        <p class="contact-text">Check out my technical projects and contributions</p>
+                        <a href="https://github.com/yourusername" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            GitHub Profile
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-info">
-                <h3>Let's Connect</h3>
-                <p>Open for opportunities and collaborations</p>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
-            </div>
             <div class="footer-bottom">
-                <p>© 2024 Your Name. All rights reserved.</p>
+                <p>© 2024 Vijay Dixit. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -1,8 +1,9 @@
 /* We'll only add custom styles here that aren't available in Bootstrap */ 
 
+/* Base styles */
 :root {
-    --primary-blue: #1a73e8;
-    --light-blue: #f6f9fe;
+    --primary-blue: #2b7de9;
+    --light-blue: #f8fafd;
     --dark-blue: #174ea6;
     --navbar-bg: #ffffff;
     --body-bg: #f8f9fa;
@@ -16,10 +17,126 @@ body {
     color: var(--text-primary);
 }
 
+/* Projects layout */
+#projects-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--navbar-bg);
+}
+
+.section-title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: left;
+}
+
+#projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.project-box {
+    flex: 0 0 calc(33.333% - 1rem);
+    background: var(--navbar-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1.25rem;
+    min-width: 300px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.project-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+    color: var(--primary-blue);
+    background-color: var(--light-blue);
+}
+
+.project-content {
+    padding-top: 0.5rem;
+}
+
+/* Badge improvements */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    background-color: var(--light-blue) !important;
+    color: var(--primary-blue) !important;
+    border: none !important;
+}
+
+/* List improvements */
+.list-unstyled li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.list-unstyled li i {
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .project-box {
+        flex: 0 0 calc(50% - 0.75rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .project-box {
+        flex: 0 0 100%;
+    }
+}
+
 /* Navbar customization */
 .navbar {
-    padding: 0.75rem 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    padding: 0.75rem 0 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     background-color: var(--navbar-bg) !important;
 }
 
@@ -27,15 +144,20 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 0;
 }
 
 .navbar-brand {
-    margin-bottom: 0;
-    padding-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-primary) !important;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     margin: 0;
     padding: 0;
@@ -63,16 +185,17 @@ body {
 
 /* Section backgrounds */
 section {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.1);
-    margin: 1rem 0;
-    padding: 1.5rem;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Adjust container width for sections */
 .container {
-    max-width: 960px;
+    max-width: 1200px;
+    padding: 0 1rem !important;
 }
 
 /* Hero section */
@@ -103,4 +226,435 @@ section {
 /* Make navbar links align with the bottom of the brand container */
 .navbar-nav {
     align-items: flex-end;
+}
+
+/* Projects Section */
+#projects {
+    width: 100%;
+    max-width: none;
+    margin-top: 1rem;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#projects .container {
+    max-width: 1200px;
+    padding: 0 1rem !important;
+}
+
+.project-filters {
+    margin: 0;  /* Remove margin since it's now in the header */
+}
+
+.project-filters .btn-group {
+    margin-bottom: 0.5rem;  /* Small margin to align with border */
+}
+
+.card {
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+/* Update section title */
+.section-title {
+    margin-bottom: 0;
+    padding: 1rem 0;
+}
+
+/* Certifications layout - matching Projects style */
+#certifications-header {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding: 1.5rem 1rem 0.5rem;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--navbar-bg);
+}
+
+#certifications-header::before {
+    display: none;
+}
+
+#certifications-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.cert-box {
+    flex: 0 0 calc(33.333% - 1rem);
+    background: var(--navbar-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1.25rem;
+    min-width: 300px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.cert-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.cert-issuer {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.cert-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.cert-badge:hover {
+    background-color: var(--primary-blue) !important;
+    color: white !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .cert-box {
+        flex: 0 0 calc(50% - 0.75rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .cert-box {
+        flex: 0 0 100%;
+    }
+}
+
+/* Add these styles after certifications section */
+#trainings-header {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding: 1.5rem 1rem 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--navbar-bg);
+}
+
+#trainings-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+/* More compact title */
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem; /* Slightly reduced from 1.5rem */
+    margin: 0;
+    padding: 0; /* Removed padding */
+}
+
+/* More compact subtitle */
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem; /* Slightly reduced from 0.95rem */
+    margin: 0.25rem 0 0 2.25rem; /* Reduced top margin from 0.5rem */
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+/* Adjust icon size */
+.section-icon {
+    margin-right: 0.75rem;
+    color: var(--primary-blue);
+    opacity: 0.7;
+    font-size: 1.2rem; /* Slightly reduced from 1.25rem */
+    vertical-align: middle;
+}
+
+/* Ensure title and subtitle are properly spaced */
+.section-title {
+    margin-bottom: 0;
+}
+
+/* Visual separation between sections - simplified */
+.section-container {
+    position: relative;
+    padding: 0.5rem 0;
+    background: #ffffff;
+}
+
+/* First section spacing after navbar */
+.section-container:first-child {
+    padding-top: 0.5rem;  /* Reduced from 1.5rem to match other sections */
+}
+
+/* Common container styles */
+#projects-container,
+#certifications-container,
+#trainings-container,
+#skills-container,
+#contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Common header styles with consistent spacing */
+.section-header {
+    position: relative;
+    max-width: 1200px;
+    margin: 1rem auto 0;  /* This will now be consistent for all headers */
+    padding: 0.75rem 1rem 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--navbar-bg) 100%);
+    border-left: 4px solid rgba(7, 109, 243, 0.3);
+    padding-left: 1.5rem;
+    border-radius: 12px 12px 0 0;
+}
+
+/* First header special case - now matches others */
+#projects-header {
+    margin-top: 1rem;  /* Changed from 0 to match other sections */
+}
+
+/* Remove any other specific header margins */
+#certifications-header,
+#trainings-header,
+#skills-header,
+#contact-header {
+    margin: 1rem auto 0;
+}
+
+/* Skills section styling */
+#skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: stretch;
+    background-color: #ffffff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.skill-box {
+    flex: 0 0 calc(33.333% - 1rem);  /* Changed from 50% to 33.333% */
+    background: var(--navbar-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1.25rem;
+    min-width: 300px;  /* Added to match other sections */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.skill-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.skill-icon {
+    color: var(--primary-blue);
+    opacity: 0.7;
+    font-size: 1.2rem;
+}
+
+.skill-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-badge {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    opacity: 0.9;               /* Added slight opacity */
+    font-size: 0.9rem;
+    padding: 0.4em 0.8em;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .skill-box {
+        flex: 0 0 calc(50% - 0.75rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .skill-box {
+        flex: 0 0 100%;
+    }
+}
+
+/* Contact section styling */
+#contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: stretch;
+    background-color: #ffffff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.contact-box {
+    flex: 0 0 calc(33.333% - 1rem);
+    background: var(--navbar-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1.25rem;
+    min-width: 300px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.contact-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.contact-icon {
+    color: var(--primary-blue);
+    opacity: 0.7;
+    font-size: 1.2rem;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-text {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--light-blue);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .contact-box {
+        flex: 0 0 calc(50% - 0.75rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-box {
+        flex: 0 0 100%;
+    }
+}
+
+/* Simplify footer styling */
+.footer-content {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: var(--text-secondary);
+}
+
+.footer-bottom {
+    font-size: 0.9rem;
+}
+
+/* Remove unused footer styles */
+.footer-info,
+.social-links {
+    display: none;
 } 
