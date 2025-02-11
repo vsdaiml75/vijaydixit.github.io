@@ -1,4 +1,4 @@
-# My GitHub Pages Portfolio - still WIP using dummy data
+# My GitHub Pages Portfolio - Still WIP - Using dummy data
 
 Welcome to my personal portfolio hosted on GitHub Pages. This site showcases the courses I've completed, certifications I've earned, and projects I've worked on.
 
