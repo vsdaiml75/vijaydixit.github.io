@@ -1,0 +1,9 @@
+# Existing rules...
+
+# Large media files
+*.psd
+*.ai
+*.sketch
+
+# But allow badges
+!images/badges/*
