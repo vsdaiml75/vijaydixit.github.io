@@ -47,229 +47,84 @@
             </div>
         </section>
 
-        <section id="about">
-            <h1>Your Name</h1>
-            <h2>Your Title/Role</h2>
-            <p>Brief professional summary</p>
-        </section>
-
         <section id="projects">
             <h2>Featured Projects</h2>
             <div class="project-categories">
                 <button class="category-btn active" data-category="all">All</button>
                 <button class="category-btn" data-category="python">Python</button>
                 <button class="category-btn" data-category="machine-learning">Machine Learning</button>
-                <!-- Add more category buttons as needed -->
             </div>
             
-            <div class="projects-container">
-                <!-- Python Projects -->
-                <div class="project-category">
-                    <h3>Python Projects</h3>
-                    <div class="project-grid">
-                        <article class="project-card" data-category="python">
-                            <div class="project-header" onclick="toggleProject(this)">
-                                <h4>Project 1 <span class="toggle-icon">+</span></h4>
-                            </div>
-                            <div class="project-content">
-                                <div class="project-info">
-                                    <h5>Project Overview</h5>
-                                    <p class="project-description">Detailed description of what the project does and its key features.</p>
-                                    
-                                    <div class="project-details">
-                                        <div class="detail-item">
-                                            <h6>Key Features</h6>
-                                            <ul>
-                                                <li>Feature 1</li>
-                                                <li>Feature 2</li>
-                                                <li>Feature 3</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="detail-item">
-                                            <h6>Technologies Used</h6>
-                                            <div class="project-tech">
-                                                <span class="tech-tag">Python</span>
-                                                <span class="tech-tag">Django</span>
-                                                <span class="tech-tag">PostgreSQL</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="detail-item">
-                                            <h6>Implementation Details</h6>
-                                            <p>Brief explanation of how the project was implemented, challenges faced, and solutions.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="project-links">
-                                        <a href="https://github.com/yourusername/project-repo" class="btn github-btn" target="_blank">
-                                            <i class="fab fa-github"></i> View Source Code
-                                        </a>
-                                        <a href="#" class="btn demo-btn" target="_blank">
-                                            <i class="fas fa-external-link-alt"></i> Live Demo
-                                        </a>
-                                        <a href="#" class="btn docs-btn" target="_blank">
-                                            <i class="fas fa-book"></i> Documentation
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="project-card" data-category="python">
-                            <div class="project-header" onclick="toggleProject(this)">
-                                <h4>Project 2 <span class="toggle-icon">+</span></h4>
-                            </div>
-                            <div class="project-content">
-                                <div class="project-info">
-                                    <h5>Project Overview</h5>
-                                    <p class="project-description">Detailed description of what the project does and its key features.</p>
-                                    
-                                    <div class="project-details">
-                                        <div class="detail-item">
-                                            <h6>Key Features</h6>
-                                            <ul>
-                                                <li>Feature 1</li>
-                                                <li>Feature 2</li>
-                                                <li>Feature 3</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="detail-item">
-                                            <h6>Technologies Used</h6>
-                                            <div class="project-tech">
-                                                <span class="tech-tag">Python</span>
-                                                <span class="tech-tag">Django</span>
-                                                <span class="tech-tag">PostgreSQL</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="detail-item">
-                                            <h6>Implementation Details</h6>
-                                            <p>Brief explanation of how the project was implemented, challenges faced, and solutions.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="project-links">
-                                        <a href="https://github.com/yourusername/project-repo" class="btn github-btn" target="_blank">
-                                            <i class="fab fa-github"></i> View Source Code
-                                        </a>
-                                        <a href="#" class="btn demo-btn" target="_blank">
-                                            <i class="fas fa-external-link-alt"></i> Live Demo
-                                        </a>
-                                        <a href="#" class="btn docs-btn" target="_blank">
-                                            <i class="fas fa-book"></i> Documentation
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+            <div class="project-grid">
+                <!-- Python Project 1 -->
+                <article class="project-card" data-category="python">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <h4>Python Project 1 <span class="toggle-icon">+</span></h4>
                     </div>
-                </div>
-
-                <!-- Machine Learning Projects -->
-                <div class="project-category">
-                    <h3>Machine Learning Projects</h3>
-                    <div class="project-grid">
-                        <article class="project-card" data-category="machine-learning">
-                            <div class="project-header" onclick="toggleProject(this)">
-                                <h4>ML Project 1 <span class="toggle-icon">+</span></h4>
-                            </div>
-                            <div class="project-content">
-                                <div class="project-info">
-                                    <h5>Project Overview</h5>
-                                    <p class="project-description">Detailed description of what the project does and its key features.</p>
-                                    
-                                    <div class="project-details">
-                                        <div class="detail-item">
-                                            <h6>Key Features</h6>
-                                            <ul>
-                                                <li>Feature 1</li>
-                                                <li>Feature 2</li>
-                                                <li>Feature 3</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="detail-item">
-                                            <h6>Technologies Used</h6>
-                                            <div class="project-tech">
-                                                <span class="tech-tag">Python</span>
-                                                <span class="tech-tag">Django</span>
-                                                <span class="tech-tag">PostgreSQL</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="detail-item">
-                                            <h6>Implementation Details</h6>
-                                            <p>Brief explanation of how the project was implemented, challenges faced, and solutions.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="project-links">
-                                        <a href="https://github.com/yourusername/project-repo" class="btn github-btn" target="_blank">
-                                            <i class="fab fa-github"></i> View Source Code
-                                        </a>
-                                        <a href="#" class="btn demo-btn" target="_blank">
-                                            <i class="fas fa-external-link-alt"></i> Live Demo
-                                        </a>
-                                        <a href="#" class="btn docs-btn" target="_blank">
-                                            <i class="fas fa-book"></i> Documentation
-                                        </a>
+                    <div class="project-content">
+                        <div class="project-info">
+                            <h5>Project Overview</h5>
+                            <p class="project-description">Detailed description of what the project does and its key features.</p>
+                            
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <h6>Key Features</h6>
+                                    <ul>
+                                        <li>Feature 1</li>
+                                        <li>Feature 2</li>
+                                        <li>Feature 3</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="detail-item">
+                                    <h6>Technologies Used</h6>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">Django</span>
+                                        <span class="tech-tag">PostgreSQL</span>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
 
-                        <article class="project-card" data-category="machine-learning">
-                            <div class="project-header" onclick="toggleProject(this)">
-                                <h4>ML Project 2 <span class="toggle-icon">+</span></h4>
-                            </div>
-                            <div class="project-content">
-                                <div class="project-info">
-                                    <h5>Project Overview</h5>
-                                    <p class="project-description">Detailed description of what the project does and its key features.</p>
-                                    
-                                    <div class="project-details">
-                                        <div class="detail-item">
-                                            <h6>Key Features</h6>
-                                            <ul>
-                                                <li>Feature 1</li>
-                                                <li>Feature 2</li>
-                                                <li>Feature 3</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="detail-item">
-                                            <h6>Technologies Used</h6>
-                                            <div class="project-tech">
-                                                <span class="tech-tag">Python</span>
-                                                <span class="tech-tag">Django</span>
-                                                <span class="tech-tag">PostgreSQL</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="detail-item">
-                                            <h6>Implementation Details</h6>
-                                            <p>Brief explanation of how the project was implemented, challenges faced, and solutions.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="project-links">
-                                        <a href="https://github.com/yourusername/project-repo" class="btn github-btn" target="_blank">
-                                            <i class="fab fa-github"></i> View Source Code
-                                        </a>
-                                        <a href="#" class="btn demo-btn" target="_blank">
-                                            <i class="fas fa-external-link-alt"></i> Live Demo
-                                        </a>
-                                        <a href="#" class="btn docs-btn" target="_blank">
-                                            <i class="fas fa-book"></i> Documentation
-                                        </a>
-                                    </div>
+                                <div class="detail-item">
+                                    <h6>Implementation Details</h6>
+                                    <p>Brief explanation of how the project was implemented, challenges faced, and solutions.</p>
                                 </div>
                             </div>
-                        </article>
+
+                            <div class="project-links">
+                                <a href="https://github.com/yourusername/project-repo" class="btn github-btn" target="_blank">
+                                    <i class="fab fa-github"></i> View Source Code
+                                </a>
+                                <a href="#" class="btn demo-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="#" class="btn docs-btn" target="_blank">
+                                    <i class="fas fa-book"></i> Documentation
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </article>
+
+                <!-- Python Project 2 -->
+                <article class="project-card" data-category="python">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <h4>Python Project 2 <span class="toggle-icon">+</span></h4>
+                    </div>
+                    <div class="project-content">
+                        <!-- Same structure as Project 1 -->
+                    </div>
+                </article>
+
+                <!-- ML Project 1 -->
+                <article class="project-card" data-category="machine-learning">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <h4>ML Project 1 <span class="toggle-icon">+</span></h4>
+                    </div>
+                    <div class="project-content">
+                        <!-- Same structure as Project 1 -->
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -282,7 +137,6 @@
                     <p class="cert-date">Completion Date: Month Year</p>
                     <a href="#" class="cert-verify">Verify Certificate</a>
                 </article>
-                <!-- Add more certification cards as needed -->
             </div>
         </section>
 
@@ -295,7 +149,6 @@
                         <li>HTML5</li>
                         <li>CSS3</li>
                         <li>JavaScript</li>
-                        <!-- Add more skills -->
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -303,10 +156,8 @@
                     <ul>
                         <li>Node.js</li>
                         <li>Python</li>
-                        <!-- Add more skills -->
                     </ul>
                 </div>
-                <!-- Add more skill categories as needed -->
             </div>
         </section>
     </main>
@@ -330,4 +181,4 @@
 
     <script src="js/main.js"></script>
 </body>
-</html> 
+</html>

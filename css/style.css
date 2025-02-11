@@ -121,7 +121,7 @@ h2 {
 /* Project Grid Layout */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);  /* Always 2 columns */
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -133,8 +133,7 @@ h2 {
     padding: 1.5rem;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    display: flex;
-    flex-direction: column;
+    width: 100%;  /* Ensure full width within grid cell */
 }
 
 .project-card:hover {
@@ -283,10 +282,8 @@ footer {
         font-size: 1.5rem;
     }
 
-    .project-grid,
-    .cert-grid,
-    .skills-container {
-        grid-template-columns: 1fr;
+    .project-grid {
+        grid-template-columns: 1fr;  /* Single column on mobile */
     }
 }
 
@@ -515,8 +512,9 @@ section {
 }
 
 .project-content {
-    display: none;
+    display: none;  /* Hidden by default */
     padding: 1rem 0;
+    margin-top: 1rem;
 }
 
 .project-item.active .project-content {

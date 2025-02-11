@@ -72,19 +72,25 @@ categoryButtons.forEach(button => {
     });
 });
 
-// Add this function for project toggling
+// Update the toggleProject function
 function toggleProject(header) {
-    const projectItem = header.parentElement;
-    const wasActive = projectItem.classList.contains('active');
+    const projectContent = header.nextElementSibling;
+    const toggleIcon = header.querySelector('.toggle-icon');
     
-    // Close all project items in the same category
-    const categoryCard = projectItem.closest('.project-card');
-    categoryCard.querySelectorAll('.project-item').forEach(item => {
-        item.classList.remove('active');
+    // Close all other open projects
+    document.querySelectorAll('.project-content').forEach(content => {
+        if (content !== projectContent) {
+            content.style.display = 'none';
+            content.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+        }
     });
     
-    // Toggle the clicked item if it wasn't already active
-    if (!wasActive) {
-        projectItem.classList.add('active');
+    // Toggle current project
+    if (projectContent.style.display === 'block') {
+        projectContent.style.display = 'none';
+        toggleIcon.textContent = '+';
+    } else {
+        projectContent.style.display = 'block';
+        toggleIcon.textContent = '×';
     }
 }
