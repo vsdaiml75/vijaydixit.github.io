@@ -121,19 +121,20 @@ h2 {
 /* Project Grid Layout */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* Always 2 columns */
+    grid-template-columns: repeat(2, 1fr);  /* Forces 2 columns */
     gap: 2rem;
-    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Project Card */
 .project-card {
+    width: 100%;
     background: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    width: 100%;  /* Ensure full width within grid cell */
 }
 
 .project-card:hover {
@@ -512,9 +513,8 @@ section {
 }
 
 .project-content {
-    display: none;  /* Hidden by default */
+    display: none;
     padding: 1rem 0;
-    margin-top: 1rem;
 }
 
 .project-item.active .project-content {

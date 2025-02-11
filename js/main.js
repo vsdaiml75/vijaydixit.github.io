@@ -74,23 +74,23 @@ categoryButtons.forEach(button => {
 
 // Update the toggleProject function
 function toggleProject(header) {
-    const projectContent = header.nextElementSibling;
-    const toggleIcon = header.querySelector('.toggle-icon');
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.toggle-icon');
     
     // Close all other open projects
-    document.querySelectorAll('.project-content').forEach(content => {
-        if (content !== projectContent) {
-            content.style.display = 'none';
-            content.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+    document.querySelectorAll('.project-content').forEach(item => {
+        if (item !== content) {
+            item.style.display = 'none';
+            item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
         }
     });
     
     // Toggle current project
-    if (projectContent.style.display === 'block') {
-        projectContent.style.display = 'none';
-        toggleIcon.textContent = '+';
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+        icon.textContent = '+';
     } else {
-        projectContent.style.display = 'block';
-        toggleIcon.textContent = '×';
+        content.style.display = 'block';
+        icon.textContent = '×';
     }
 }
