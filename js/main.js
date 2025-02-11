@@ -29,3 +29,20 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Mobile Menu Toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+        navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    }
+});

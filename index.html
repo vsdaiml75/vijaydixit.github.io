@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional portfolio showcasing my projects, certifications, and skills">
     <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">YourName</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#certifications">Certifications</a></li>
@@ -21,6 +31,22 @@
     </header>
 
     <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+                <p class="tagline">Full Stack Developer | Cloud Engineer | DevOps Enthusiast</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn primary">View My Work</a>
+                    <a href="#contact" class="btn secondary">Contact Me</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+
         <section id="about">
             <h1>Your Name</h1>
             <h2>Your Title/Role</h2>
@@ -86,11 +112,19 @@
     </main>
 
     <footer>
-        <p>© 2024 Your Name. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="mailto:your.email@example.com">Email</a>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Let's Connect</h3>
+                <p>Open for opportunities and collaborations</p>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Your Name. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
