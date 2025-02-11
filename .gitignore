@@ -7,3 +7,6 @@
 
 # But allow badges
 !images/badges/*
+
+# Allow certificate PDFs
+!assets/certificates/**/*.pdf

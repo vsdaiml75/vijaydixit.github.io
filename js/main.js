@@ -47,80 +47,130 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Project details toggle
+// State persistence
+function saveState(type, id, isExpanded) {
+    const states = JSON.parse(localStorage.getItem('portfolio-states') || '{}');
+    states[`${type}-${id}`] = isExpanded;
+    localStorage.setItem('portfolio-states', JSON.stringify(states));
+}
+
+function loadState(type, id) {
+    const states = JSON.parse(localStorage.getItem('portfolio-states') || '{}');
+    return states[`${type}-${id}`] || false;
+}
+
+// Modify toggleContent function
+function toggleContent(button, contentClass) {
+    const content = button.closest('.project-box, .cert-box').querySelector(contentClass);
+    const id = content.id;
+    const type = contentClass.replace('.', '');
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    
+    // Update ARIA states and save state
+    button.setAttribute('aria-expanded', !isExpanded);
+    saveState(type, id, !isExpanded);
+    
+    const icon = button.querySelector('i');
+    button.classList.toggle('active');
+    
+    // Close all other open content in the same section
+    const section = content.closest('section');
+    section.querySelectorAll(contentClass).forEach(otherContent => {
+        if (otherContent !== content && otherContent.classList.contains('show')) {
+            otherContent.style.maxHeight = '0';
+            otherContent.classList.remove('show');
+            const otherButton = otherContent.closest('.project-box, .cert-box').querySelector('.toggle-btn');
+            otherButton.classList.remove('active');
+            otherButton.querySelector('i').style.transform = 'rotate(0deg)';
+        }
+    });
+    
+    if (content.classList.contains('show')) {
+        content.style.maxHeight = '0';
+        icon.style.transform = 'rotate(0deg)';
+        setTimeout(() => content.classList.remove('show'), 300);
+    } else {
+        content.classList.add('show');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+    }
+}
+
 function toggleProject(button) {
-    const projectBox = button.closest('.project-box');
-    const content = projectBox.querySelector('.project-content');
-    const icon = button.querySelector('i');
-    
-    // Close all other projects
-    document.querySelectorAll('.project-content').forEach(otherContent => {
-        if (otherContent !== content && otherContent.style.display === 'block') {
-            otherContent.style.display = 'none';
-            otherContent.previousElementSibling
-                .querySelector('i')
-                .className = 'fas fa-chevron-down';
-        }
-    });
-    
-    // Toggle current project
-    if (content.style.display === 'none') {
-        content.style.display = 'block';
-        icon.className = 'fas fa-chevron-up';
-    } else {
-        content.style.display = 'none';
-        icon.className = 'fas fa-chevron-down';
-    }
+    toggleContent(button, '.project-content');
 }
 
-// Add this function for certification toggles
 function toggleCertification(button) {
-    const certBox = button.closest('.cert-box');
-    const content = certBox.querySelector('.cert-content');
-    const icon = button.querySelector('i');
-    
-    // Close all other certifications
-    document.querySelectorAll('.cert-content').forEach(otherContent => {
-        if (otherContent !== content && otherContent.style.display === 'block') {
-            otherContent.style.display = 'none';
-            otherContent.previousElementSibling
-                .querySelector('i')
-                .className = 'fas fa-chevron-down';
-        }
-    });
-    
-    // Toggle current certification
-    if (content.style.display === 'none') {
-        content.style.display = 'block';
-        icon.className = 'fas fa-chevron-up';
-    } else {
-        content.style.display = 'none';
-        icon.className = 'fas fa-chevron-down';
-    }
+    toggleContent(button, '.cert-content');
 }
 
-// Add this function for training toggles
 function toggleTraining(button) {
-    const trainingBox = button.closest('.cert-box');
-    const content = trainingBox.querySelector('.cert-content');
-    const icon = button.querySelector('i');
-    
-    // Close all other trainings
-    document.querySelectorAll('.cert-content').forEach(otherContent => {
-        if (otherContent !== content && otherContent.style.display === 'block') {
-            otherContent.style.display = 'none';
-            otherContent.previousElementSibling
-                .querySelector('i')
-                .className = 'fas fa-chevron-down';
+    toggleContent(button, '.cert-content');
+}
+
+// Add keyboard navigation for boxes
+document.querySelectorAll('.project-box, .cert-box, .skill-box, .contact-box').forEach(box => {
+    box.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const button = box.querySelector('.toggle-btn');
+            if (button) button.click();
         }
     });
-    
-    // Toggle current training
-    if (content.style.display === 'none') {
-        content.style.display = 'block';
-        icon.className = 'fas fa-chevron-up';
+});
+
+// Back to top functionality
+const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
     } else {
-        content.style.display = 'none';
-        icon.className = 'fas fa-chevron-down';
+        backToTop.classList.remove('visible');
     }
-}
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Add state restoration on page load
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.project-content, .cert-content').forEach(content => {
+        const id = content.id;
+        const type = content.classList.contains('project-content') ? 'project-content' : 'cert-content';
+        const isExpanded = loadState(type, id);
+        
+        if (isExpanded) {
+            const button = content.closest('.project-box, .cert-box').querySelector('.toggle-btn');
+            toggleContent(button, `.${type}`);
+        }
+    });
+});
+
+// Add clipboard functionality for section anchors
+document.querySelectorAll('.section-anchor').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = window.location.href.split('#')[0] + anchor.getAttribute('href');
+        
+        // Copy to clipboard
+        navigator.clipboard.writeText(url).then(() => {
+            // Show feedback
+            const originalIcon = anchor.innerHTML;
+            anchor.innerHTML = '<i class="fas fa-check"></i>';
+            anchor.style.color = 'var(--primary-blue)';
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                anchor.innerHTML = originalIcon;
+                anchor.style.color = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+        });
+    });
+});

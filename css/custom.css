@@ -8,7 +8,7 @@
     --navbar-bg: #ffffff;
     --body-bg: #f8f9fa;
     --text-primary: #202124;
-    --text-secondary: #5f6368;
+    --text-secondary: #505762;
 }
 
 body {
@@ -53,7 +53,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 1.25rem;
     min-width: 300px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-box:hover {
@@ -94,8 +94,26 @@ body {
     background-color: var(--light-blue);
 }
 
+.toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn.active i {
+    transform: rotate(180deg);
+}
+
 .project-content {
     padding-top: 0.5rem;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
+}
+
+.project-content.show {
+    max-height: 500px; /* Adjust based on content */
+    opacity: 1;
 }
 
 /* Badge improvements */
@@ -299,7 +317,7 @@ section {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 1.25rem;
     min-width: 300px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cert-box:hover {
@@ -361,11 +379,41 @@ section {
     align-items: center;
     text-decoration: none;
     transition: all 0.2s ease;
+    position: relative;
 }
 
 .cert-badge:hover {
     background-color: var(--primary-blue) !important;
     color: white !important;
+}
+
+.cert-badge::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.cert-badge:hover::after {
+    transform: scaleX(1);
+}
+
+.cert-content {
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
+}
+
+.cert-content.show {
+    max-height: 500px; /* Adjust based on content */
+    opacity: 1;
 }
 
 /* Responsive adjustments */
@@ -523,7 +571,7 @@ section {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 1.25rem;
     min-width: 300px;  /* Added to match other sections */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-box:hover {
@@ -601,7 +649,7 @@ section {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 1.25rem;
     min-width: 300px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-box:hover {
@@ -690,4 +738,90 @@ section {
 .footer-info,
 .social-links {
     display: none;
+}
+
+/* Add focus styles for better keyboard navigation */
+.toggle-btn:focus,
+.contact-link:focus,
+.cert-badge:focus,
+.nav-link:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(43, 125, 233, 0.2);
+}
+
+/* Hide content visually but keep it accessible for screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Back to top button - adjust visibility */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--primary-blue);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--dark-blue);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.back-to-top:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(43, 125, 233, 0.3);
+}
+
+/* Section anchor styling */
+.section-header-wrapper {
+    position: relative;
+}
+
+.section-anchor {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    padding: 0.5rem;
+}
+
+.section-header:hover .section-anchor {
+    opacity: 1;
+}
+
+.section-anchor:hover {
+    color: var(--primary-blue);
 } 
