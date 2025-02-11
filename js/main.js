@@ -50,6 +50,7 @@ document.addEventListener('click', (e) => {
 // Project filtering
 const categoryButtons = document.querySelectorAll('.category-btn');
 const projectCards = document.querySelectorAll('.project-card');
+const projectCategories = document.querySelectorAll('.project-category');
 
 categoryButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -60,13 +61,14 @@ categoryButtons.forEach(button => {
         
         const selectedCategory = button.getAttribute('data-category');
         
-        projectCards.forEach(card => {
-            if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
-        });
+        if (selectedCategory === 'all') {
+            projectCategories.forEach(category => category.style.display = 'block');
+        } else {
+            projectCategories.forEach(category => {
+                const hasMatchingProjects = category.querySelector(`.project-card[data-category="${selectedCategory}"]`);
+                category.style.display = hasMatchingProjects ? 'block' : 'none';
+            });
+        }
     });
 });
 
