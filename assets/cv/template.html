@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="creator" content="Portfolio CV Generator">
+    <meta name="author" content="Vijay Dixit">
+    <!-- Remove title to prevent it from appearing in print -->
+    <link href="cv-styles.css" rel="stylesheet">
+    <style>
+        @media print {
+            /* Additional print controls */
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            /* Force remove browser-generated content */
+            * { -webkit-print-color-adjust: exact !important; }
+            @page { margin: 1.5cm; size: A4; }
+            @page :blank { display: none; }
+        }
+    </style>
+</head>
+<body class="cv-body">
+    <div class="cv-container">
+        <header class="cv-header">
+            <h1>Vijay Dixit</h1>
+            <p class="cv-subtitle">Delivery Leadership & Excellence</p>
+            <p class="cv-subtitle">Cloud Engineer | ML Enthusiast</p>
+        </header>
+
+        <section class="cv-section">
+            <h2>Professional Summary</h2>
+            <p>Senior Technology Leader with expertise in Cloud, DevOps, and Digital Transformation</p>
+        </section>
+
+        <section class="cv-section">
+            <h2>Professional Skills</h2>
+            <div class="skills-grid">
+                <!-- Skills will be populated dynamically -->
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Certifications</h2>
+            <div class="cert-grid">
+                <!-- Certifications will be populated dynamically -->
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Projects</h2>
+            <div class="projects-list">
+                <!-- Projects will be populated dynamically -->
+            </div>
+        </section>
+
+        <footer class="cv-footer">
+            <p>Contact: your.email@example.com | LinkedIn: linkedin.com/in/yourusername</p>
+        </footer>
+    </div>
+</body>
+</html>
