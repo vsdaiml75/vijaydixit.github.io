@@ -103,10 +103,11 @@ h2 {
 /* Projects Section */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     position: relative;
-    min-height: 200px; /* Adjust based on your content */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -115,8 +116,6 @@ h2 {
     padding: 1.5rem;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    opacity: 1;
-    transform: scale(1);
 }
 
 .project-card:hover {
@@ -467,7 +466,8 @@ section {
 .project-header {
     padding: 1rem;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.02);
+    background: linear-gradient(to right, var(--secondary-color) 0%, rgba(9, 132, 227, 0.1) 100%);
+    border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -479,6 +479,8 @@ section {
 }
 
 .project-header h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -522,10 +524,10 @@ section {
 }
 
 .detail-item h6 {
-    font-size: 1rem;
-    color: var(--primary-color);
+    font-size: 0.95rem;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .detail-item ul {
@@ -583,4 +585,11 @@ section {
 /* Adjust max-height for expanded content */
 .project-item.active .project-content {
     max-height: 1000px; /* Increased to accommodate more content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
 }
