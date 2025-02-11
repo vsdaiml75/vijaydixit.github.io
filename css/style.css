@@ -105,6 +105,8 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    position: relative;
+    min-height: 200px; /* Adjust based on your content */
 }
 
 .project-card {
@@ -113,6 +115,8 @@ h2 {
     padding: 1.5rem;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    opacity: 1;
+    transform: scale(1);
 }
 
 .project-card:hover {
@@ -391,4 +395,43 @@ section {
     .hero h1 {
         font-size: 2.5rem;
     }
+}
+
+/* Project Categories */
+.project-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.category-btn:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.category-btn.active {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Animation for filtering */
+.project-card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    position: absolute;
+    pointer-events: none;
 }

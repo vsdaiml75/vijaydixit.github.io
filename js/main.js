@@ -46,3 +46,26 @@ document.addEventListener('click', (e) => {
         mobileMenu.classList.remove('active');
     }
 });
+
+// Project filtering
+const categoryButtons = document.querySelectorAll('.category-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        const selectedCategory = button.getAttribute('data-category');
+        
+        projectCards.forEach(card => {
+            if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
