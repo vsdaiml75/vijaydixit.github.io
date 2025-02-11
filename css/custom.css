@@ -55,4 +55,19 @@ section {
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
     margin: 2rem 0;
     padding: 2rem;
+}
+
+/* Hero section */
+.hero h1 {
+    font-size: 2rem;  /* Reduced from the default size */
+    margin-bottom: 1rem;
+}
+
+.hero .highlight {
+    color: var(--primary-blue);
+}
+
+.hero .tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
 } 
