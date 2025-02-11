@@ -435,3 +435,63 @@ section {
     position: absolute;
     pointer-events: none;
 }
+
+/* Project Items */
+.project-item {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.project-header {
+    padding: 1rem;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.project-header:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.project-header h4 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.project-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1rem;
+}
+
+.project-item.active .project-content {
+    max-height: 500px; /* Adjust based on content */
+    padding: 1rem;
+}
+
+.project-item.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+/* Update existing project card styles */
+.project-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}

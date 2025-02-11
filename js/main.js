@@ -69,3 +69,20 @@ categoryButtons.forEach(button => {
         });
     });
 });
+
+// Add this function for project toggling
+function toggleProject(header) {
+    const projectItem = header.parentElement;
+    const wasActive = projectItem.classList.contains('active');
+    
+    // Close all project items in the same category
+    const categoryCard = projectItem.closest('.project-card');
+    categoryCard.querySelectorAll('.project-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Toggle the clicked item if it wasn't already active
+    if (!wasActive) {
+        projectItem.classList.add('active');
+    }
+}
