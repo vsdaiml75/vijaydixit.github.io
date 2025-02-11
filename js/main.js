@@ -94,3 +94,5 @@ function toggleProject(header) {
         icon.textContent = '×';
     }
 }
+
+// We'll add minimal JS for filtering projects
