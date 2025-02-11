@@ -1,26 +1,58 @@
 /* We'll only add custom styles here that aren't available in Bootstrap */ 
 
+:root {
+    --primary-blue: #1a73e8;
+    --light-blue: #f6f9fe;
+    --dark-blue: #174ea6;
+    --navbar-bg: #ffffff;
+    --body-bg: #f8f9fa;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+}
+
+body {
+    padding-top: 76px;
+    background-color: var(--body-bg);
+    color: var(--text-primary);
+}
+
 /* Navbar customization */
 .navbar {
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    background-color: var(--navbar-bg) !important;
 }
 
 .navbar-brand {
     font-weight: 600;
     font-size: 1.5rem;
+    color: var(--primary-blue) !important;
 }
 
 .nav-link {
     font-weight: 500;
     padding: 0.5rem 1rem !important;
+    color: var(--text-secondary) !important;
 }
 
 .nav-link:hover {
-    color: #0d6efd !important;
+    color: var(--primary-blue) !important;
+}
+
+.nav-link.active {
+    color: var(--primary-blue) !important;
 }
 
 /* Add padding to body to prevent content from hiding under fixed navbar */
 body {
     padding-top: 76px;
+}
+
+/* Section backgrounds */
+section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    margin: 2rem 0;
+    padding: 2rem;
 } 
