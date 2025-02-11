@@ -142,21 +142,42 @@ h2 {
 .project-links {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
-.btn {
-    display: inline-block;
+.project-links .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: var(--secondary-color);
-    color: white;
-    text-decoration: none;
     border-radius: 4px;
+    font-size: 0.9rem;
     transition: var(--transition);
 }
 
-.btn:hover {
-    background: #0773c5;
+.github-btn {
+    background: #24292e !important;
+}
+
+.github-btn:hover {
+    background: #2f363d !important;
+}
+
+.demo-btn {
+    background: var(--secondary-color) !important;
+}
+
+.demo-btn:hover {
+    background: #0773c5 !important;
+}
+
+.docs-btn {
+    background: #6c757d !important;
+}
+
+.docs-btn:hover {
+    background: #5a6268 !important;
 }
 
 /* Certifications Section */
@@ -479,7 +500,7 @@ section {
 }
 
 .project-item.active .project-content {
-    max-height: 500px; /* Adjust based on content */
+    max-height: 1000px; /* Increased to accommodate more content */
     padding: 1rem;
 }
 
@@ -487,11 +508,79 @@ section {
     transform: rotate(45deg);
 }
 
-/* Update existing project card styles */
-.project-card {
-    background: var(--card-bg);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
+/* Project Content Styling */
+.project-info {
+    padding: 1rem 0;
+}
+
+.project-details {
+    margin: 1.5rem 0;
+}
+
+.detail-item {
+    margin-bottom: 1.5rem;
+}
+
+.detail-item h6 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.detail-item ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.detail-item ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Updated Project Links */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.project-links .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
     transition: var(--transition);
+}
+
+.github-btn {
+    background: #24292e !important;
+}
+
+.github-btn:hover {
+    background: #2f363d !important;
+}
+
+.demo-btn {
+    background: var(--secondary-color) !important;
+}
+
+.demo-btn:hover {
+    background: #0773c5 !important;
+}
+
+.docs-btn {
+    background: #6c757d !important;
+}
+
+.docs-btn:hover {
+    background: #5a6268 !important;
+}
+
+/* Adjust max-height for expanded content */
+.project-item.active .project-content {
+    max-height: 1000px; /* Increased to accommodate more content */
 }
